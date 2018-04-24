@@ -18,3 +18,9 @@ wp-content/plugins/hello.php
 
 assets/js/min/
 assets/styles/css/
+node_modules/
+vendor/
+mix-manifest.json
+package-lock.json
+composer.lock
+assets/styles/sass/_variables.scss
