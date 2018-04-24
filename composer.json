@@ -1,0 +1,21 @@
+{
+    "name": "snapwp/snap-theme-bootstrap",
+    "type": "wordpress-theme",
+    "license": "MIT",
+    "description": "WordPress Bootstrap 4 starter theme, utilising the Snap theme framework.",
+    "homepage": "https://github.com/snapwp/snap-theme-bootstrap",
+    "authors": [
+        {
+            "name": "Jake Whiteley",
+            "email": "jakebwhiteley@gmail.com"
+        }
+    ],
+    "keywords": [
+        "wordpress"
+    ],
+    "require": {
+        "php": ">=5.6",
+        "composer/installers": "~1.0",
+        "snapwp/snap-core": "dev-dev"
+    }
+}
