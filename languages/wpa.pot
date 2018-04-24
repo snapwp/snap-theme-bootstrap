@@ -1,0 +1,106 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: WP Artisan Theme Framework\n"
+"POT-Creation-Date: 2017-08-24 13:51+0100\n"
+"PO-Revision-Date: 2017-08-24 13:34+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: _snap/core/class-snap-admin.php:48
+msgid "Word doc"
+msgstr ""
+
+#: _snap/core/class-snap-admin.php:49
+msgid "Excel doc"
+msgstr ""
+
+#: _snap/core/class-snap-admin.php:50
+msgid "PDF"
+msgstr ""
+
+#: _snap/core/class-snap-admin.php:51
+msgid "ZIP"
+msgstr ""
+
+#: _snap/core/class-snap-admin.php:52
+msgid "CSV"
+msgstr ""
+
+#: _snap/core/class-snap-admin.php:58
+#, php-format
+msgid "Manage %s"
+msgstr ""
+
+#: _snap/core/class-snap-admin.php:59
+#, php-format
+msgid " <span class=\"count\">(%s)</span>"
+msgid_plural " <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: _snap/core/class-snap-admin.php:75
+msgid "Built using"
+msgstr ""
+
+#: _snap/core/class-snap-admin.php:76
+msgid "and"
+msgstr ""
+
+#: _snap/core/pagination.php:22 includes/bootstrap.php:24
+msgid "First page"
+msgstr ""
+
+#: _snap/core/pagination.php:23 includes/bootstrap.php:27
+msgid "Previous"
+msgstr ""
+
+#: _snap/core/pagination.php:24 includes/bootstrap.php:26
+msgid "Next"
+msgstr ""
+
+#: _snap/core/pagination.php:25 includes/bootstrap.php:25
+msgid "Last page"
+msgstr ""
+
+#: _snap/core/pagination.php:26
+msgid "Pagination"
+msgstr ""
+
+#: includes/widgets.php:11
+msgid "Main Sidebar"
+msgstr ""
+
+#: includes/widgets.php:13
+msgid "Widgets in this area will be shown on all posts and pages."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "WP Artisan Theme Framework"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://fatmedia.co.uk"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Your Fat Media Wordpress Theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WP_Artisan"
+msgstr ""
