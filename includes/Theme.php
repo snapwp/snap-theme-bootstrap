@@ -13,7 +13,7 @@ use Snap\Core\Hookable;
  */
 class Theme extends Hookable
 {
-	 /**
+	/**
      * Actions to add on init.
      *
      * @since 1.0.0
@@ -56,9 +56,9 @@ class Theme extends Hookable
 	public function register_theme_widgets()
 	{
 		register_sidebar([
-	        'name' => __( 'Main Sidebar', 'snap' ),
+	        'name' => __('Main Sidebar', 'snap'),
 	        'id' => 'sidebar-main',
-	        'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'snap' ),
+	        'description' => __('Widgets in this area will be shown on all posts and pages.', 'snap'),
 	        'before_widget' => '<div class="mb-4">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4>',
