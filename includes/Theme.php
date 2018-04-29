@@ -3,6 +3,7 @@
 namespace Theme;
 
 use Snap\Core\Hookable;
+use Snap\Core\Modules\Assets;
 
 /**
  * Setup theme.
@@ -17,6 +18,7 @@ class Theme extends Hookable
      * Actions to add on init.
      *
      * @since 1.0.0
+     * 
      * @var array
      */
 	protected $actions = [
@@ -28,6 +30,11 @@ class Theme extends Hookable
 		],
 	];
 
+	public function __construct(Assets $assets)
+	{
+		$this->assets = $assets;
+	}
+
  	/**
      * Enqueue the theme CSS files.
      *
@@ -35,7 +42,7 @@ class Theme extends Hookable
      */
 	public function enqueue_theme_css()
 	{
-		wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/assets/styles/css/style.css');
+		wp_enqueue_style('bootstrap', $this->assets->get_asset_url('/assets/styles/css/style.css'));
 	}		
 
 	/**
@@ -45,7 +52,7 @@ class Theme extends Hookable
      */
 	public function enqueue_theme_scripts()
 	{
-		wp_enqueue_script('bootstrap',  get_stylesheet_directory_uri() . '/assets/js/min/theme.js', ['jquery'], false, true);
+		wp_enqueue_script('bootstrap',  $this->assets->get_asset_url('/assets/js/min/theme.js'), ['jquery'], false, true);
 	}
 
 	/**

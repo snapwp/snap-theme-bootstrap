@@ -31,7 +31,8 @@ if (process.env.NODE_ENV === 'installation') {
 	if (mix.inProduction()) {
 		mix.setPublicPath('./')
 			.sass('assets/styles/sass/style.scss', 'assets/styles/css')
-			.js('assets/js/theme.js', 'assets/js/min');
+			.js('assets/js/theme.js', 'assets/js/min')
+			.version();
 	} else {
 		mix.setPublicPath('./')
 			.sass('assets/styles/sass/style.scss', 'assets/styles/css')
