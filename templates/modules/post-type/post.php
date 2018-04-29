@@ -1,8 +1,7 @@
 <?php if ( is_single() ) : ?>
 
 	<article>
-		<?php  snap_the_post_thumbnail( 'post_featured_image', [ 'class' => 'mb-3 img-fluid' ] ); ?>
-		<?php /*snap_the_post_thumbnail( [300, 300], [ 'class' => 'mb-3 img-fluid' ] );*/ ?>
+		<?php the_post_thumbnail( 'post_featured_image', [ 'class' => 'mb-3 img-fluid' ] ); ?>
 
 		<h1><?php the_title(); ?></h1>
  
@@ -12,7 +11,7 @@
 <?php else : ?>
 
 	<article <?php post_class( 'card mb-4' ); ?>>
-		<?php snap_the_post_thumbnail( 'post_thumbnail', [ 'class' => 'card-img-top img-fluid' ] ); ?>
+		<?php the_post_thumbnail( 'post_thumbnail', [ 'class' => 'card-img-top img-fluid' ] ); ?>
 
 		<div class="card-body">
 			<h4 class="card-title"><?php the_title(); ?></h4>

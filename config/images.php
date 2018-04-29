@@ -11,9 +11,11 @@ return [
 
 
     /*
-     * The location of the placeholder directory.
+     * The location of the placeholder directory relative to the current theme folder.
+     *
+     * Set to false to not use placeholders.
      */
-	'placeholder_dir' => 'assets/images/',
+	'placeholder_dir' => 'assets/images/placeholders/',
 
 
 	/*
@@ -53,7 +55,7 @@ return [
      * 'size' => [99999, 99999, false, 'Massive image'],
      */
     'image_sizes' => [
-    	// 'post_desktop' => [728, 99999, true, 'Full width']
+    	'post_featured_image' => [730, 99999, false, 'Full width']
     ],
 
 
