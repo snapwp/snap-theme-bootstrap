@@ -4,9 +4,9 @@ use Snap\Core\Snap;
 
 
 
-Snap::module( 'header' );
-Snap::module( 'navigation' );
+Snap::view()->module( 'header' );
+Snap::view()->module( 'navigation' );
 
 Snap::route()->view( 'index' );
 
-Snap::module( 'footer' );
+Snap::view()->module( 'footer' );
