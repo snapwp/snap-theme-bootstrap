@@ -20,7 +20,7 @@
             'menu_class'      => 'navbar-nav ml-auto mt-2 mt-lg-0',
             'depth'           => 2,
             'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-            'walker'          => new WP_Bootstrap_Navwalker()
+            'walker'          => new Theme\Bootstrap_Nav_Walker()
         ] );
         ?>
     </div>

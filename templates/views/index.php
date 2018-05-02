@@ -1,4 +1,4 @@
-<?php snap_render_module( 'content/title' ); ?>
+<?php snap_render_partial( 'content/title' ); ?>
 
 <div class="container">
 	<div class="row">
@@ -10,7 +10,7 @@
 		</main>
 
 		<aside class="col-lg-4">
-			<?php snap_render_module( 'sidebars' ); ?>
+			<?php snap_render_partial( 'sidebars' ); ?>
 		</aside>
 	</div>
 </div>

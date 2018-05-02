@@ -13,6 +13,11 @@
     "keywords": [
         "wordpress"
     ],
+     "autoload": {
+        "psr-4": {
+            "Theme\\": "includes/"
+        }
+    },
     "require": {
         "php": ">=7.0",
         "composer/installers": "~1.0",
