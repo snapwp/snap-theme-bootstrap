@@ -63,9 +63,19 @@ class Theme extends Hookable
 	public function register_theme_widgets()
 	{
 		register_sidebar([
-	        'name' => __('Main Sidebar', 'snap'),
-	        'id' => 'sidebar-main',
-	        'description' => __('Widgets in this area will be shown on all posts and pages.', 'snap'),
+	        'name' => __('Blog Sidebar', 'snap'),
+	        'id' => 'sidebar-blog',
+	        'description' => __('Widgets in this area will be shown on all posts only.', 'snap'),
+	        'before_widget' => '<div class="mb-4">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4>',
+			'after_title'   => '</h4>',
+	    ]);
+
+	    register_sidebar([
+	        'name' => __('Page Sidebar', 'snap'),
+	        'id' => 'sidebar-page',
+	        'description' => __('Widgets in this area will be shown on all pages.', 'snap'),
 	        'before_widget' => '<div class="mb-4">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4>',
