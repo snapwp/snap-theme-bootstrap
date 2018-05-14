@@ -2,8 +2,6 @@
 
 use Snap\Core\Snap;
 
-
-
 Snap::view()->partial( 'header' );
 Snap::view()->partial( 'navigation' );
 

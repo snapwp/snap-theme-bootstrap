@@ -15,7 +15,7 @@
     ],
      "autoload": {
         "psr-4": {
-            "Theme\\": "includes/"
+            "Theme\\": "theme/"
         }
     },
     "require": {
