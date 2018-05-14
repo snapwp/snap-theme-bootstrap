@@ -109,8 +109,17 @@ class Bootstrap_Nav_Walker extends Walker_Nav_Menu {
 
 
     $classes   = empty( $item->classes ) ? [] : (array) $item->classes;
-    $classes[] = 'menu-item-' . $item->ID;
+
+    $classes = array_diff($classes, ['menu-item', 'current_page_parent', 'current_page_ancestor', 'menu-item-has-children', 'current_page_item']);
+
     $classes[] = 'nav-item';
+
+    if (in_array('current-menu-item', $classes) || in_Array('current-menu-ancestor', $classes)) {
+      $classes[] ='active';
+    }
+
+    //var_dump($classes);
+
 
     if ( $args->walker->has_children ) {
       $classes[] = 'dropdown';
@@ -218,7 +227,11 @@ class Bootstrap_Nav_Walker extends Walker_Nav_Menu {
      */
     $title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-    $item_classes = [ 'nav-link' ];
+    $item_classes = empty( $item->classes ) ? [ 'nav-link' ] : array_merge([ 'nav-link' ], (array) $item->classes);
+
+    if (in_array('current-menu-item', $classes) || in_Array('current-menu-ancestor', $classes)) {
+      $item_classes[] ='active';
+    }
 
     if ( $args->walker->has_children ) {
       $item_classes[] = 'dropdown-toggle';
