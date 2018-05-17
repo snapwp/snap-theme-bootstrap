@@ -1,35 +1,6 @@
 <?php
 
-/**
- * Provide full theme support for Bootstrap 4.0.0-beta
- *
- * Of course you don't have to use this file at all, it is invluded as an example of how to tailor snaprtisan's output to the FED framework of your choice
- */
 
-
-add_filter('snap_pagination_defaults', 'snap_bootstrap_pagination_overrides');
-/**
- * Add Bootstrap markup to snap_pagination default arguments
- *
- * @see snap_pagination
- *
- * @param  array $args The default arguments
- * @return array       The altered arguments
- */
-function snap_bootstrap_pagination_overrides($args)
-{
-    $overrides = [
-        'before_output'       => '<nav aria-label="Page navigation example"><ul class="pagination justify-content-center">',
-        'link_wrapper'        => '<li class="page-item"><a class="page-link" href="%s">%s</a></li>',
-        'active_link_wrapper' => '<li class="page-item active"><span class="page-link">%s</span></li>',
-        'first_wrapper'       => '<li class="page-item"><a href="%s" class="page-link">' . __('First page') . '</a></li>',
-        'last_wrapper'        => '<li class="page-item"><a href="%s" class="page-link">' . __('Last page') . '</a></li>',
-        'next_wrapper'        => '<li class="page-item"><a href="%s" class="page-link">' . __('Next') . '</a></li>',
-        'previous_wrapper'    => '<li class="page-item"><a href="%s" class="page-link">' . __('Previous') . '</a></li>',
-    ];
-
-    return wp_parse_args($overrides, $args);
-}
 
 
 add_filter('embed_oembed_html', 'snap_bootstrap_oembed_filter', 10, 4);

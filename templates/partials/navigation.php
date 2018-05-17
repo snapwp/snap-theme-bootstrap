@@ -19,6 +19,7 @@
             'menu_id'         => false,
             'menu_class'      => 'navbar-nav ml-auto mt-2 mt-lg-0',
             'depth'           => 2,
+            'items_wrap'      => '<ul id="%1$s" class="%2$s" itemscope itemtype="http://www.schema.org/SiteNavigationElement">%3$s</ul>',
             'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
             'walker'          => new Theme\Walkers\Navbar()
         ] );
