@@ -1,6 +1,6 @@
 <?php
 
-namespace Theme;
+namespace Theme\Walkers;
 
 use Walker_Nav_Menu;
 
@@ -17,7 +17,7 @@ use Walker_Nav_Menu;
  * @extends        Walker_Nav_Menu
  * @author         Javier Prieto <jprieton@gmail.com>
  */
-class Bootstrap_Nav_Walker extends Walker_Nav_Menu {
+class Navbar extends Walker_Nav_Menu {
 
   /**
    * @since       1.0.0
@@ -110,7 +110,17 @@ class Bootstrap_Nav_Walker extends Walker_Nav_Menu {
 
     $classes   = empty( $item->classes ) ? [] : (array) $item->classes;
 
-    $classes = array_diff($classes, ['menu-item', 'current_page_parent', 'current_page_ancestor', 'menu-item-has-children', 'current_page_item']);
+    $classes = array_diff(
+      $classes, 
+      [
+        'menu-item', 
+        'current_page_parent', 
+        'current_page_ancestor', 
+        'menu-item-has-children', 
+        'current_page_item',
+        'menu-item-type-post_type',
+        'menu-item-object-page',
+      ]);
 
     $classes[] = 'nav-item';
 
@@ -240,6 +250,22 @@ class Bootstrap_Nav_Walker extends Walker_Nav_Menu {
     if ( 0 < $depth ) {
       $item_classes[] = 'dropdown-item';
     }
+
+    $item_classes = array_diff(
+      $item_classes, 
+      [
+        'menu-item-has-children', 
+        'current_page_ancestor', 
+        'current_page_parent', 
+        'current-page-parent', 
+        'current-menu-parent',
+        'current-page-ancestor',
+        'current-menu-ancestor',
+        'menu-item',
+        'menu-item-type-post_type',
+        'menu-item-object-page',
+      ]
+    );
 
     $item_output = $args->before;
     $item_output .= '<a class="' . implode( ' ', $item_classes ) . '" ' . $attributes . '>';
