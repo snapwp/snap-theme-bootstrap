@@ -4,8 +4,6 @@ namespace Theme\Walkers;
 
 use Walker_Nav_Menu;
 
-
-
 /**
  * Bootstrap_Nav_Walker class
  *
@@ -17,14 +15,15 @@ use Walker_Nav_Menu;
  * @extends        Walker_Nav_Menu
  * @author         Javier Prieto <jprieton@gmail.com>
  */
-class Navbar extends Walker_Nav_Menu {
+class Navbar extends Walker_Nav_Menu
+{
 
   /**
    * @since       1.0.0
    * @access      public
    * @var type    bool
    */
-  private $dropdown = false;
+    private $dropdown = false;
 
   /**
    * Starts the list before the elements are added.
@@ -37,18 +36,19 @@ class Navbar extends Walker_Nav_Menu {
    * @param int      $depth  Depth of menu item. Used for padding.
    * @param stdClass $args   An object of wp_nav_menu() arguments.
    */
-  public function start_lvl( &$output, $depth = 0, $args = array() ) {
-    if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
-      $t = '';
-      $n = '';
-    } else {
-      $t = "\t";
-      $n = "\n";
-    }
+    public function start_lvl(&$output, $depth = 0, $args = array())
+    {
+        if (isset($args->item_spacing) && 'discard' === $args->item_spacing) {
+            $t = '';
+            $n = '';
+        } else {
+            $t = "\t";
+            $n = "\n";
+        }
 
-    $this->dropdown = true;
-    $output         .= $n . str_repeat( $t, $depth ) . '<div class="dropdown-menu" role="menu">' . $n;
-  }
+        $this->dropdown = true;
+        $output         .= $n . str_repeat($t, $depth) . '<div class="dropdown-menu" role="menu">' . $n;
+    }
 
   /**
    * Ends the list of after the elements are added.
@@ -61,18 +61,19 @@ class Navbar extends Walker_Nav_Menu {
    * @param int      $depth  Depth of menu item. Used for padding.
    * @param stdClass $args   An object of wp_nav_menu() arguments.
    */
-  public function end_lvl( &$output, $depth = 0, $args = array() ) {
-    if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
-      $t = '';
-      $n = '';
-    } else {
-      $t = "\t";
-      $n = "\n";
-    }
+    public function end_lvl(&$output, $depth = 0, $args = array())
+    {
+        if (isset($args->item_spacing) && 'discard' === $args->item_spacing) {
+            $t = '';
+            $n = '';
+        } else {
+            $t = "\t";
+            $n = "\n";
+        }
 
-    $this->dropdown = false;
-    $output         .= $n . str_repeat( $t, $depth ) . '</div>' . $n;
-  }
+        $this->dropdown = false;
+        $output         .= $n . str_repeat($t, $depth) . '</div>' . $n;
+    }
 
   /**
    * Starts the element output.
@@ -87,59 +88,61 @@ class Navbar extends Walker_Nav_Menu {
    * @param stdClass $args   An object of wp_nav_menu() arguments.
    * @param int      $id     Current item ID.
    */
-  public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-    if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
-      $t = '';
-      $n = '';
-    } else {
-      $t = "\t";
-      $n = "\n";
-    }
+    public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+    {
+        if (isset($args->item_spacing) && 'discard' === $args->item_spacing) {
+            $t = '';
+            $n = '';
+        } else {
+            $t = "\t";
+            $n = "\n";
+        }
 
-    $indent = str_repeat( $t, $depth );
+        $indent = str_repeat($t, $depth);
 
-    if ( 0 === strcasecmp( $item->attr_title, 'divider' ) && $this->dropdown ) {
-      $output .= $indent . '<div class="dropdown-divider"></div>' . $n;
-      return;
-    } elseif ( 0 === strcasecmp( $item->title, 'divider' ) && $this->dropdown ) {
-      $output .= $indent . '<div class="dropdown-divider"></div>' . $n;
-      return;
-    }      
-
-
-
-    $classes   = empty( $item->classes ) ? [] : (array) $item->classes;
-
-    $classes = array_diff(
-      $classes, 
-      [
-        'menu-item', 
-        'current_page_parent', 
-        'current_page_ancestor', 
-        'menu-item-has-children', 
-        'current_page_item',
-        'menu-item-type-post_type',
-        'menu-item-object-page',
-      ]);
-
-    $classes[] = 'nav-item';
-
-    if (in_array('current-menu-item', $classes) || in_Array('current-menu-ancestor', $classes)) {
-      $classes[] ='active';
-    }
-
-    //var_dump($classes);
+        if (0 === strcasecmp($item->attr_title, 'divider') && $this->dropdown) {
+            $output .= $indent . '<div class="dropdown-divider"></div>' . $n;
+            return;
+        } elseif (0 === strcasecmp($item->title, 'divider') && $this->dropdown) {
+            $output .= $indent . '<div class="dropdown-divider"></div>' . $n;
+            return;
+        }
 
 
-    if ( $args->walker->has_children ) {
-      $classes[] = 'dropdown';
-    }
 
-    if ( 0 < $depth ) {
-      $classes[] = 'dropdown-menu';
-    }
+        $classes   = empty($item->classes) ? [] : (array) $item->classes;
 
-    /**
+        $classes = array_diff(
+            $classes,
+            [
+            'menu-item',
+            'current_page_parent',
+            'current_page_ancestor',
+            'menu-item-has-children',
+            'current_page_item',
+            'menu-item-type-post_type',
+            'menu-item-object-page',
+            ]
+        );
+
+        $classes[] = 'nav-item';
+
+        if (in_array('current-menu-item', $classes) || in_Array('current-menu-ancestor', $classes)) {
+            $classes[] ='active';
+        }
+
+      //var_dump($classes);
+
+
+        if ($args->walker->has_children) {
+            $classes[] = 'dropdown';
+        }
+
+        if (0 < $depth) {
+            $classes[] = 'dropdown-menu';
+        }
+
+      /**
      * Filters the arguments for a single nav menu item.
      *
      * @since 1.2.0
@@ -148,9 +151,9 @@ class Navbar extends Walker_Nav_Menu {
      * @param WP_Post  $item  Menu item data object.
      * @param int      $depth Depth of menu item. Used for padding.
      */
-    $args = apply_filters( 'nav_menu_item_args', $args, $item, $depth );
+        $args = apply_filters('nav_menu_item_args', $args, $item, $depth);
 
-    /**
+      /**
      * Filters the CSS class(es) applied to a menu item's list item element.
      *
      * @since 3.0.0
@@ -161,10 +164,10 @@ class Navbar extends Walker_Nav_Menu {
      * @param stdClass $args    An object of wp_nav_menu() arguments.
      * @param int      $depth   Depth of menu item. Used for padding.
      */
-    $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
-    $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
+        $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
 
-    /**
+      /**
      * Filters the ID applied to a menu item's list item element.
      *
      * @since 3.0.1
@@ -175,20 +178,20 @@ class Navbar extends Walker_Nav_Menu {
      * @param stdClass $args    An object of wp_nav_menu() arguments.
      * @param int      $depth   Depth of menu item. Used for padding.
      */
-    $id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
-    $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+        $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth);
+        $id = $id ? ' id="' . esc_attr($id) . '"' : '';
 
-    if ( !$this->dropdown ) {
-      $output .= $indent . '<li' . $id . $class_names . '>' . $n . $indent . $t;
-    }
+        if (!$this->dropdown) {
+            $output .= $indent . '<li' . $id . $class_names . '>' . $n . $indent . $t;
+        }
 
-    $atts           = array();
-    $atts['title']  = !empty( $item->attr_title ) ? $item->attr_title : '';
-    $atts['target'] = !empty( $item->target ) ? $item->target : '';
-    $atts['rel']    = !empty( $item->xfn ) ? $item->xfn : '';
-    $atts['href']   = !empty( $item->url ) ? $item->url : '';
+        $atts           = array();
+        $atts['title']  = !empty($item->attr_title) ? $item->attr_title : '';
+        $atts['target'] = !empty($item->target) ? $item->target : '';
+        $atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
+        $atts['href']   = !empty($item->url) ? $item->url : '';
 
-    /**
+      /**
      * Filters the HTML attributes applied to a menu item's anchor element.
      *
      * @since 3.6.0
@@ -206,26 +209,26 @@ class Navbar extends Walker_Nav_Menu {
      * @param stdClass $args  An object of wp_nav_menu() arguments.
      * @param int      $depth Depth of menu item. Used for padding.
      */
-    $atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
+        $atts = apply_filters('nav_menu_link_attributes', $atts, $item, $args, $depth);
 
-    if ( $args->walker->has_children ) {
-      $atts['data-toggle']   = 'dropdown';
-      $atts['aria-haspopup'] = 'true';
-      $atts['aria-expanded'] = 'false';
-    }
+        if ($args->walker->has_children) {
+            $atts['data-toggle']   = 'dropdown';
+            $atts['aria-haspopup'] = 'true';
+            $atts['aria-expanded'] = 'false';
+        }
 
-    $attributes = '';
-    foreach ( $atts as $attr => $value ) {
-      if ( !empty( $value ) ) {
-        $value      = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
-        $attributes .= ' ' . $attr . '="' . $value . '"';
-      }
-    }
+        $attributes = '';
+        foreach ($atts as $attr => $value) {
+            if (!empty($value)) {
+                $value      = ( 'href' === $attr ) ? esc_url($value) : esc_attr($value);
+                $attributes .= ' ' . $attr . '="' . $value . '"';
+            }
+        }
 
-    /** This filter is documented in wp-includes/post-template.php */
-    $title = apply_filters( 'the_title', $item->title, $item->ID );
+      /** This filter is documented in wp-includes/post-template.php */
+        $title = apply_filters('the_title', $item->title, $item->ID);
 
-    /**
+      /**
      * Filters a menu item's title.
      *
      * @since 4.4.0
@@ -235,45 +238,45 @@ class Navbar extends Walker_Nav_Menu {
      * @param stdClass $args  An object of wp_nav_menu() arguments.
      * @param int      $depth Depth of menu item. Used for padding.
      */
-    $title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
+        $title = apply_filters('nav_menu_item_title', $title, $item, $args, $depth);
 
-    $item_classes = empty( $item->classes ) ? [ 'nav-link' ] : array_merge([ 'nav-link' ], (array) $item->classes);
+        $item_classes = empty($item->classes) ? [ 'nav-link' ] : array_merge([ 'nav-link' ], (array) $item->classes);
 
-    if (in_array('current-menu-item', $classes) || in_Array('current-menu-ancestor', $classes)) {
-      $item_classes[] ='active';
-    }
+        if (in_array('current-menu-item', $classes) || in_Array('current-menu-ancestor', $classes)) {
+            $item_classes[] ='active';
+        }
 
-    if ( $args->walker->has_children ) {
-      $item_classes[] = 'dropdown-toggle';
-    }
+        if ($args->walker->has_children) {
+            $item_classes[] = 'dropdown-toggle';
+        }
 
-    if ( 0 < $depth ) {
-      $item_classes[] = 'dropdown-item';
-    }
+        if (0 < $depth) {
+            $item_classes[] = 'dropdown-item';
+        }
 
-    $item_classes = array_diff(
-      $item_classes, 
-      [
-        'menu-item-has-children', 
-        'current_page_ancestor', 
-        'current_page_parent', 
-        'current-page-parent', 
-        'current-menu-parent',
-        'current-page-ancestor',
-        'current-menu-ancestor',
-        'menu-item',
-        'menu-item-type-post_type',
-        'menu-item-object-page',
-      ]
-    );
+        $item_classes = array_diff(
+            $item_classes,
+            [
+            'menu-item-has-children',
+            'current_page_ancestor',
+            'current_page_parent',
+            'current-page-parent',
+            'current-menu-parent',
+            'current-page-ancestor',
+            'current-menu-ancestor',
+            'menu-item',
+            'menu-item-type-post_type',
+            'menu-item-object-page',
+            ]
+        );
 
-    $item_output = $args->before;
-    $item_output .= '<a class="' . implode( ' ', $item_classes ) . '" ' . $attributes . '>';
-    $item_output .= $args->link_before . $title . $args->link_after;
-    $item_output .= '</a>';
-    $item_output .= $args->after;
+        $item_output = $args->before;
+        $item_output .= '<a class="' . implode(' ', $item_classes) . '" ' . $attributes . '>';
+        $item_output .= $args->link_before . $title . $args->link_after;
+        $item_output .= '</a>';
+        $item_output .= $args->after;
 
-    /**
+      /**
      * Filters a menu item's starting output.
      *
      * The menu item's starting output only includes `$args->before`, the opening `<a>`,
@@ -287,8 +290,8 @@ class Navbar extends Walker_Nav_Menu {
      * @param int      $depth       Depth of menu item. Used for padding.
      * @param stdClass $args        An object of wp_nav_menu() arguments.
      */
-    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-  }
+        $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+    }
 
   /**
    * Ends the element output, if needed.
@@ -302,17 +305,18 @@ class Navbar extends Walker_Nav_Menu {
    * @param int      $depth  Depth of page. Not Used.
    * @param stdClass $args   An object of wp_nav_menu() arguments.
    */
-  public function end_el( &$output, $item, $depth = 0, $args = array() ) {
-    if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
-      $t = '';
-      $n = '';
-    } else {
-      $t = "\t";
-      $n = "\n";
-    }
+    public function end_el(&$output, $item, $depth = 0, $args = array())
+    {
+        if (isset($args->item_spacing) && 'discard' === $args->item_spacing) {
+            $t = '';
+            $n = '';
+        } else {
+            $t = "\t";
+            $n = "\n";
+        }
 
-    $output .= $this->dropdown ? '' : str_repeat( $t, $depth ) . '</li>' . $n;
-  }
+        $output .= $this->dropdown ? '' : str_repeat($t, $depth) . '</li>' . $n;
+    }
 
   /**
    * Menu Fallback
@@ -321,28 +325,30 @@ class Navbar extends Walker_Nav_Menu {
    *
    * @param array $args passed from the wp_nav_menu function.
    */
-  public static function fallback( $args ) {
-    if ( current_user_can( 'edit_theme_options' ) ) {
+    public static function fallback($args)
+    {
+        if (current_user_can('edit_theme_options')) {
+            $defaults = [
+                'container'       => 'div',
+                'container_id'    => false,
+                'container_class' => false,
+                'menu_class'      => 'menu',
+                'menu_id'         => false,
+            ];
+            $args = wp_parse_args($args, $defaults);
 
-      $defaults = [
-          'container'       => 'div',
-          'container_id'    => false,
-          'container_class' => false,
-          'menu_class'      => 'menu',
-          'menu_id'         => false,
-      ];
-      $args     = wp_parse_args( $args, $defaults );
-      if ( !empty( $args['container'] ) ) {
-        echo sprintf( '<%s id="%s" class="%s">', $args['container'], $args['container_id'], $args['container_class'] );
-      }
-      echo sprintf( '<ul id="%s" class="%s">', $args['container_id'], $args['container_class'] ) .
-      '<li class="nav-item">' .
-      '<a href="' . admin_url( 'nav-menus.php' ) . '" class="nav-link">' . __( 'Add a menu', 'snap' ) . '</a>' .
-      '</li></ul>';
-      if ( !empty( $args['container'] ) ) {
-        echo sprintf( '</%s>', $args['container'] );
-      }
+            if (! empty($args['container'])) {
+                echo sprintf('<%s id="%s" class="%s">', $args['container'], $args['container_id'], $args['container_class']);
+            }
+
+            echo sprintf('<ul id="%s" class="%s">', $args['container_id'], $args['container_class']) .
+            '<li class="nav-item">' .
+            '<a href="' . admin_url('nav-menus.php') . '" class="nav-link">' . __('Add a menu', 'snap') . '</a>' .
+            '</li></ul>';
+
+            if (! empty($args['container'])) {
+                echo sprintf('</%s>', $args['container']);
+            }
+        }
     }
-  }
-
 }
