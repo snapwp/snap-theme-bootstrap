@@ -77,6 +77,12 @@ class Bootstrap extends Hookable
         return '<figure class="embed-responsive embed-responsive-16by9">' . $html . '</figure>';
     }
 
+    /**
+     * Adds blockquote and table classes to the_content.
+     * 
+     * @param  string $html Post HTML.
+     * @return string 
+     */
     public function inject_content_classes($html)
     {
         if (strpos($html, '<blockquote') !== false) {
@@ -94,7 +100,7 @@ class Bootstrap extends Hookable
      * Wrap post content images in a figure, annd add bootstrap classes to them to sort out alignment issues.
      *
      * @param  string $content The page content.
-     * @return string Modified page content.
+     * @return string
      */
     public function add_bootrap_markup_to_images($content)
     {
@@ -116,23 +122,23 @@ class Bootstrap extends Hookable
             }
         }
 
-        // wrapping things in figures can cause stray <p> tagsm, so we need to remove
+        // Wrapping things in figures can cause stray <p> tagsm, so we need to remove.
         $content = str_replace([ '<p><figure', '</figure></p>' ], [ '<figure', '</figure>' ], $content);
 
         return $content;
     }
 
     /**
-     * Wrap all images with captions in .figure and respect the alignment
+     * Wrap all images with captions in .figure and respect the alignment.
      *
-     * @param  string $empty   Empty string
-     * @param  array  $attr    Attributes attributed to the image
-     * @param  string $content Image content
-     * @return string Bootstrap figure markup
+     * @param  string $empty   Empty string.
+     * @param  array  $attr    Attributes attributed to the image.
+     * @param  string $content Image content.
+     * @return string Bootstrap
      */
     public function wrap_captions($empty, $attr, $content)
     {
-        // ensure all images are responsive and have the correct classes to be in a figure
+        // Ensure all images are responsive and have the correct classes to be in a figure.
         $content = str_replace('class="', 'class="img-fluid figure-img ', $content);
 
         switch ($attr['align']) {
