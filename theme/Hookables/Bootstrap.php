@@ -1,6 +1,6 @@
 <?php
 
-namespace Theme;
+namespace Theme\Hookables;
 
 use Snap\Core\Hookable;
 
