@@ -28,6 +28,37 @@ class Navbar extends Walker_Nav_Menu
     private $has_schema = false;
 
     /**
+     * Ensure the items_Wrap argument contains microdata.
+     *
+     * @since 1.0.0
+     */
+    public function __construct()
+    {
+        if (! has_filter('wp_nav_menu_args', [$this, 'add_scehma_to_navbar_ul'])) {
+            add_filter( 'wp_nav_menu_args',  [$this, 'add_scehma_to_navbar_ul']);
+        }
+    }
+
+    /**
+     * Filter to ensure the items_Wrap argument contains microdata.
+     *
+     * @since 1.0.0
+     *
+     * @param  array $args The nav instance arguments.
+     * @return array $args The altered nav instance arguments.
+     */
+    public function add_scehma_to_navbar_ul($args)
+    {
+        $wrap = $args['items_wrap'];
+
+        if (strpos($wrap, 'SiteNavigationElement') === false) {
+            $args['items_wrap'] = preg_replace('/(>).*>?\%3\$s/', " itemscope itemtype=\"http://www.schema.org/SiteNavigationElement\"$0", $wrap);
+        }
+
+        return $args;
+    }
+
+    /**
      * Starts the list before the elements are added.
      *
      * @since 1.0.0
