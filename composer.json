@@ -24,7 +24,8 @@
         "snapwp/snap-core": "dev-dev"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "~3.0"
+        "squizlabs/php_codesniffer": "~3.0",
+        "snapwp/snap-whoops": "dev-master"
     },
     "scripts": {
         "sniff": [
