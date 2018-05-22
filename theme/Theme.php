@@ -9,8 +9,6 @@ use Snap\Core\Modules\Assets;
  * Setup theme.
  *
  * This means registering scripts, sidebars and menus.
- *
- * @since  1.0.0
  */
 class Theme extends Hookable
 {
@@ -30,6 +28,10 @@ class Theme extends Hookable
         ],
     ];
 
+    /**
+     * [__construct description]
+     * @param Assets $assets [description]
+     */
     public function __construct(Assets $assets)
     {
         $this->assets = $assets;

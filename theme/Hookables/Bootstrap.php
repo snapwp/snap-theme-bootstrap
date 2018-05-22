@@ -52,13 +52,13 @@ class Bootstrap extends Hookable
     public function override_snap_pagination_overrides($args)
     {
         $overrides = [
-            'before_output'       => '<nav aria-label="Page navigation example"><ul class="pagination justify-content-center">',
-            'link_wrapper'        => '<li class="page-item"><a class="page-link" href="%s">%s</a></li>',
+            'before_output'       => '<nav aria-label="' . __('Pagination', 'theme') . '"><ul class="pagination justify-content-center" itemscope itemtype="http://schema.org/SiteNavigationElement">',
+            'link_wrapper'        => '<li class="page-item"><a href="%s" class="page-link" itemprop="url"><span itemprop="name"><span class="sr-only">'. __('Page', 'theme') .'</span>%s</span></a></li>',
             'active_link_wrapper' => '<li class="page-item active"><span class="page-link">%s</span></li>',
-            'first_wrapper'       => '<li class="page-item"><a href="%s" class="page-link">' . __('First page', 'theme') . '</a></li>',
-            'last_wrapper'        => '<li class="page-item"><a href="%s" class="page-link">' . __('Last page', 'theme') . '</a></li>',
-            'next_wrapper'        => '<li class="page-item"><a href="%s" class="page-link">' . __('Next', 'theme') . '</a></li>',
-            'previous_wrapper'    => '<li class="page-item"><a href="%s" class="page-link">' . __('Previous', 'theme') . '</a></li>',
+            'first_wrapper'       => '<li class="page-item"><a href="%s" class="page-link" itemprop="url"><span itemprop="name">' . __('First page', 'theme') . '</span></a></li>',
+            'last_wrapper'        => '<li class="page-item"><a href="%s" class="page-link" itemprop="url"><span itemprop="name">' . __('Last page', 'theme') . '</span></a></li>',
+            'next_wrapper'        => '<li class="page-item"><a href="%s" class="page-link" itemprop="url"><span itemprop="name">' . __('Next', 'theme') . '</span></a></li>',
+            'previous_wrapper'    => '<li class="page-item"><a href="%s" class="page-link" itemprop="url"><span itemprop="name">' . __('Previous', 'theme') . '</span></a></li>',
         ];
 
         return wp_parse_args($overrides, $args);
