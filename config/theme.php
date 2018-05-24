@@ -9,6 +9,7 @@ return [
 
     'disable_comments'      => false,
 
+    'enable_whoops' => false,
 
     'remove_asset_versions' => true,
 
