@@ -4,7 +4,7 @@
 namespace Theme\Controllers;
 
 use Snap\Core\Request;
-use Snap\Core\View;
+use Snap\Core\Templating\View;
 
 class TestController
 {
