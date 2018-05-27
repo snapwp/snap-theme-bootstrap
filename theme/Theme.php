@@ -44,7 +44,7 @@ class Theme extends Hookable
      */
     public function enqueue_theme_css()
     {
-        wp_enqueue_style('bootstrap', $this->assets->get_asset_url('/assets/styles/css/style.css'));
+        wp_enqueue_style('bootstrap', $this->assets->get_asset_url('/assets/dist/css/style.css'));
     }
 
     /**
@@ -54,7 +54,7 @@ class Theme extends Hookable
      */
     public function enqueue_theme_scripts()
     {
-        wp_enqueue_script('bootstrap', $this->assets->get_asset_url('/assets/js/min/theme.js'), ['jquery'], false, true);
+        wp_enqueue_script('bootstrap', $this->assets->get_asset_url('/assets/dist/scripts/theme.js'), ['jquery'], false, true);
     }
 
     /**

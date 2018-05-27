@@ -2,8 +2,8 @@ const mix = require('laravel-mix');
 const path = require('path');
 const fs = require('fs');
 
-let variablesPath = path.resolve(__dirname, 'assets/styles/sass/_variables.scss');
-
+let src = (relPath) => path.resolve(__dirname, 'assets/src/', relPath),
+	dist = (relPath) => path.resolve(__dirname, 'assets/dist/', relPath);
 
 if (process.env.NODE_ENV === 'installation') {
 	/**
@@ -11,15 +11,15 @@ if (process.env.NODE_ENV === 'installation') {
 	 *
 	 * Copy various assets into the current child theme.
 	 */
-	mix.copyDirectory('node_modules/bootstrap/scss', 'assets/styles/sass/vendor/bootstrap');
-	mix.copyDirectory('node_modules/bootstrap/js', 'assets/js/vendor/bootstrap');
-	mix.copy('node_modules/jquery/dist/jquery.min.js', 'assets/js/vendor/jquery/jquery.min.js');
-	mix.copy('node_modules/jquery/dist/jquery.slim.min.js', 'assets/js/vendor/jquery/jquery.slim.min.js');
-	mix.copy('node_modules/popper.js/dist/popper.js', 'assets/js/vendor/popper/popper.js');
-	mix.copy('node_modules/popper.js/dist/popper.min.js', 'assets/js/vendor/popper/popper.min.js');
+	mix.copyDirectory('node_modules/bootstrap/scss', src('sass/sass/vendor/bootstrap'));
+	mix.copyDirectory('node_modules/bootstrap/js', src('scripts/vendor/bootstrap'));
+	mix.copy('node_modules/jquery/dist/jquery.min.js', src('scripts/vendor/jquery/jquery.min.js'));
+	mix.copy('node_modules/jquery/dist/jquery.slim.min.js', src('scripts/vendor/jquery/jquery.slim.min.js'));
+	mix.copy('node_modules/popper.js/dist/popper.js', src('scripts/vendor/popper/popper.js'));
+	mix.copy('node_modules/popper.js/dist/popper.min.js', src('scripts/vendor/popper/popper.min.js'));
 
-	if (! fs.existsSync(variablesPath)) {
-		mix.copy('node_modules/bootstrap/scss/_variables.scss', variablesPath);
+	if (! fs.existsSync(src('sass/_variables.scss'))) {
+		mix.copy('node_modules/bootstrap/scss/_variables.scss', src('sass/_variables.scss'));
 	}
 } else {
 	mix.webpackConfig({
@@ -28,18 +28,18 @@ if (process.env.NODE_ENV === 'installation') {
 	    }
 	});
 
+	mix.setPublicPath('./')
+		.options({ processCssUrls: false })
+		.sass(src('sass/style.scss'), dist('css'))
+		.copyDirectory(src('images'), dist('images'))
+		.js(src('scripts/theme.js'), dist('scripts'));
+
 	if (mix.inProduction()) {
-		mix.setPublicPath('./')
-			.sass('assets/styles/sass/style.scss', 'assets/styles/css')
-			.js('assets/js/theme.js', 'assets/js/min')
+		mix.options({ processCssUrls: false })
 			.version();
 	} else {
-		mix.setPublicPath('./')
-			.sass('assets/styles/sass/style.scss', 'assets/styles/css')
-			.js('assets/js/theme.js', 'assets/js/min')
-			.webpackConfig({
-		        devtool: 'source-map'
-		    })
-   			.sourceMaps();
+		mix.webpackConfig({
+	        devtool: 'source-map'
+	    }).sourceMaps();
 	}
 }
