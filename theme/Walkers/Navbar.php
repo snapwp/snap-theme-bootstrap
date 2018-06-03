@@ -40,7 +40,7 @@ class Navbar extends Walker_Nav_Menu
     }
 
     /**
-     * Filter to ensure the items_Wrap argument contains microdata.
+     * Filter to ensure the items_wrap argument contains microdata.
      *
      * @since 1.0.0
      *
