@@ -15,7 +15,7 @@ class Navbar extends Walker_Nav_Menu
      * Whether the current level is a dropdown or not.
      * 
      * @since 1.0.0
-     * @var type bool
+     * @var bool
      */
     private $dropdown = false;
 
@@ -23,7 +23,7 @@ class Navbar extends Walker_Nav_Menu
      * Whether the items_wrap contains schema microdata or not.
      * 
      * @since 1.0.0
-     * @var type bool
+     * @var bool
      */
     private $has_schema = false;
 
@@ -34,8 +34,8 @@ class Navbar extends Walker_Nav_Menu
      */
     public function __construct()
     {
-        if (! has_filter('wp_nav_menu_args', [$this, 'add_scehma_to_navbar_ul'])) {
-            add_filter( 'wp_nav_menu_args',  [$this, 'add_scehma_to_navbar_ul']);
+        if (! has_filter('wp_nav_menu_args', [$this, 'add_schema_to_navbar_ul'])) {
+            add_filter( 'wp_nav_menu_args',  [$this, 'add_schema_to_navbar_ul']);
         }
     }
 
@@ -47,12 +47,12 @@ class Navbar extends Walker_Nav_Menu
      * @param  array $args The nav instance arguments.
      * @return array $args The altered nav instance arguments.
      */
-    public function add_scehma_to_navbar_ul($args)
+    public function add_schema_to_navbar_ul($args)
     {
         $wrap = $args['items_wrap'];
 
         if (strpos($wrap, 'SiteNavigationElement') === false) {
-            $args['items_wrap'] = preg_replace('/(>).*>?\%3\$s/', " itemscope itemtype=\"http://www.schema.org/SiteNavigationElement\"$0", $wrap);
+            $args['items_wrap'] = preg_replace('/(>).*>?\%3\$s/', ' itemscope itemtype="http://www.schema.org/SiteNavigationElement"$0', $wrap);
         }
 
         return $args;
