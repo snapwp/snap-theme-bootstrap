@@ -2,10 +2,11 @@ const mix = require('laravel-mix');
 const path = require('path');
 const fs = require('fs');
 
-let src = (relPath) => path.resolve(__dirname, 'assets/src/', relPath),
-	dist = (relPath) => path.resolve(__dirname, 'assets/dist/', relPath);
+let src = (relPath) => path.resolve(__dirname, 'resources/assets/src/', relPath),
+	dist = (relPath) => path.resolve(__dirname, 'dist/', relPath);
 
 if (process.env.NODE_ENV === 'installation') {
+
 	/**
 	 * Run the initial build process.
 	 *
@@ -21,14 +22,16 @@ if (process.env.NODE_ENV === 'installation') {
 	if (! fs.existsSync(src('sass/_variables.scss'))) {
 		mix.copy('node_modules/bootstrap/scss/_variables.scss', src('sass/_variables.scss'));
 	}
+
 } else {
+
 	mix.webpackConfig({
 	    externals: {
 	        "jquery": "jQuery"
 	    }
 	});
 
-	mix.setPublicPath('./')
+	mix.setPublicPath('./dist/')
 		.options({ processCssUrls: false })
 		.sass(src('sass/style.scss'), dist('css'))
 		.copyDirectory(src('images'), dist('images'))
@@ -42,4 +45,5 @@ if (process.env.NODE_ENV === 'installation') {
 	        devtool: 'source-map'
 	    }).sourceMaps();
 	}
+	
 }

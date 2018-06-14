@@ -1,7 +1,9 @@
-assets/dist
+dist/css
+dist/images
+dist/scripts
+dist/mix-manifest.json
 node_modules/
 vendor/
-mix-manifest.json
 package-lock.json
 composer.lock
-assets/src/sass/_variables.scss
+resources/assets/src/sass/_variables.scss

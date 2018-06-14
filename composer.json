@@ -19,15 +19,6 @@
         "snapwp/snap-core": "dev-dev"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "~3.0",
         "snapwp/snap-whoops": "dev-master"
-    },
-    "scripts": {
-        "sniff": [
-            "phpcs --extensions=php ./theme"
-        ],           
-        "fix": [
-            "phpcbf --extensions=php ./theme"
-        ]
     }
 }

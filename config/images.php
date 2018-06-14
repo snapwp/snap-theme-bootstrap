@@ -15,7 +15,7 @@ return [
      *
      * Set to false to not use placeholders.
      */
-	'placeholder_dir' => 'assets/dist/images/placeholders/',
+	'placeholder_dir' => 'dist/images/placeholders/',
 
 
 	/*
