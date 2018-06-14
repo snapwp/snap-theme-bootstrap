@@ -2,59 +2,57 @@
 
 namespace Theme;
 
-use Snap\Core\Hookable;
-use Snap\Core\Modules\Assets;
+use Snap\Core\Application;
 
 /**
  * Setup theme.
  *
  * This means registering scripts, sidebars and menus.
  */
-class Theme extends Hookable
+class Setup extends Application
 {
     /**
      * Actions to add on init.
      *
      * @since 1.0.0
-     *
      * @var array
      */
     protected $actions = [
-        'after_setup_theme' => 'register_theme_menus',
         'widgets_init' => 'register_theme_widgets',
-        'wp_enqueue_scripts' => [
-            'enqueue_theme_css',
-            'enqueue_theme_scripts',
-        ],
+        'wp_enqueue_scripts' => 'enqueue_theme_assets',
     ];
 
     /**
-     * [__construct description]
-     * @param Assets $assets [description]
+     * Declare theme support.
+     *
+     * Keys are the feature to enable, and values are any additional arguments to pass to add_theme_support().
+     *
+     * @since  1.0.0
+     * @var array
      */
-    public function __construct(Assets $assets)
-    {
-        $this->assets = $assets;
-    }
+    protected $supports = [
+        'woocommerce'
+    ];    
+
+    /**
+     * Declare theme menus.
+     *
+     * @since  1.0.0
+     * @var array
+     */
+    protected $menus = [
+        'primary' => 'The primary navigation for the site',
+    ];
 
     /**
      * Enqueue the theme CSS files.
      *
      * @since 1.0.0
      */
-    public function enqueue_theme_css()
+    public function enqueue_theme_assets()
     {
-        wp_enqueue_style('bootstrap', $this->assets->get_asset_url('css/style.css'));
-    }
-
-    /**
-     * Enqueue the theme Javascript files.
-     *
-     * @since 1.0.0
-     */
-    public function enqueue_theme_scripts()
-    {
-        wp_enqueue_script('bootstrap', $this->assets->get_asset_url('scripts/theme.js'), ['jquery'], false, true);
+        wp_enqueue_style('bootstrap', snap_get_asset_url('css/style.css'));
+        wp_enqueue_script('bootstrap', snap_get_asset_url('scripts/theme.js'), ['jquery'], false, true);
     }
 
     /**
@@ -82,18 +80,6 @@ class Theme extends Hookable
             'after_widget'  => '</div>',
             'before_title'  => '<h4>',
             'after_title'   => '</h4>',
-        ]);
-    }
-
-    /**
-     * Register the theme's navigation menus.
-     *
-     * @since 1.0.0
-     */
-    public function register_theme_menus()
-    {
-        register_nav_menus([
-            'primary' => 'The primary navigation for the site',
         ]);
     }
 }
