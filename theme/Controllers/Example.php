@@ -6,7 +6,7 @@ namespace Theme\Controllers;
 use Snap\Core\Request;
 use Snap\Core\Templating\View;
 
-class TestController
+class Example
 {
     private $view = null;
 
