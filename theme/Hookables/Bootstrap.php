@@ -44,7 +44,7 @@ class Bootstrap extends Hookable
     /**
      * Add Bootstrap markup to snap_pagination default arguments
      *
-     * @see Snap\Core\Modules\Pagination
+     * @see Snap\Modules\Pagination
      *
      * @param  array $args The default arguments
      * @return array       The altered arguments
