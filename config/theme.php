@@ -20,6 +20,9 @@ return [
     'disable_customizer' => true,
 
 
+    /**
+     * Whether to use the Whoops exception handler.
+     */
     'enable_whoops' => false,
 
 
@@ -49,12 +52,4 @@ return [
      * If not false, then load this version of jquery via the Google CDN.
      */
     'use_jquery_cdn'  => '3.2.1',
-    
-    /**
-     * Set to true to use the snap admin theme.
-     *
-     * As well as graphical changes, the admin theme also reorders the page menu link to be above posts, and cleans
-     * the admin bar.
-     */
-    'snap_admin_theme' => true,
 ];
