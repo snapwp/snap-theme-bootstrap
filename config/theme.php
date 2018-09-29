@@ -21,12 +21,6 @@ return [
 
 
     /**
-     * Whether to use the Whoops exception handler.
-     */
-    'enable_whoops' => false,
-
-
-    /**
      * Whether to use the asset version strings added by wp_enqueue_script/style functions.
      */
     'remove_asset_versions' => true,

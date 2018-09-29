@@ -2,6 +2,6 @@
 
 return [
 	'providers' => [
-		Snap\Whoops\Whoops_Provider::class
+		Snap\Debug\Debug_Provider::class
 	]
 ];

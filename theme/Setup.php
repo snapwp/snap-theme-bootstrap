@@ -51,8 +51,8 @@ class Setup extends Application
      */
     public function enqueue_theme_assets()
     {
-        wp_enqueue_style('bootstrap', snap_get_asset_url('css/style.css'));
-        wp_enqueue_script('bootstrap', snap_get_asset_url('scripts/theme.js'), ['jquery'], false, true);
+        wp_enqueue_style('bootstrap', snap_get_asset_url('/css/style.css'));
+        wp_enqueue_script('bootstrap', snap_get_asset_url('/scripts/theme.js'), ['jquery'], false, true);
     }
 
     /**
