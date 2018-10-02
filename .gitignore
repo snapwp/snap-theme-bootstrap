@@ -7,3 +7,4 @@ vendor/
 package-lock.json
 composer.lock
 resources/assets/src/sass/_variables.scss
+cache/templates/*.bladec

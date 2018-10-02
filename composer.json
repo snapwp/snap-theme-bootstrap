@@ -19,6 +19,6 @@
         "snapwp/snap-core": "dev-master"
     },
     "require-dev": {
-        "snapwp/snap-debug": "dev-master"
+        "snapwp/snap-debug": "~1.0"
     }
 }
