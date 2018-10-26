@@ -19,6 +19,11 @@
         "snapwp/snap-core": "dev-master"
     },
     "require-dev": {
-        "snapwp/snap-whoops": "dev-master"
+        "snapwp/snap-debug": ">=1.0"
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "php -r \"echo 'hey';\""
+        ]
     }
 }
