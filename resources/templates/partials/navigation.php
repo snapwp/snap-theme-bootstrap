@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4" role="navigation">
     <div class="container">
         <a class="navbar-brand" href="<?php echo  esc_attr( get_home_url() ); ?>">
-            <img src="//getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block mr-lg-2 align-top" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+            <img src="//getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block mr-lg-2 align-top" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
             <?php echo get_bloginfo( 'name' ); ?>
         </a>
 
