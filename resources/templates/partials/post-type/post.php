@@ -13,7 +13,7 @@
 <?php else : ?>
 
 	<article <?php post_class( 'card mb-4' ); ?>>
-		<?php the_post_thumbnail( 'post_thumbnail', [ 'class' => 'card-img-top img-fluid' ] ); ?>
+		<?php the_post_thumbnail( 'post_featured_image', [ 'class' => 'card-img-top img-fluid' ] ); ?>
 
 		<div class="card-body">
 			<h4 class="card-title"><?php the_title(); ?></h4>
