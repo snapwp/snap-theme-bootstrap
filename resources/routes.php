@@ -1,18 +1,19 @@
 <?php
 
 use Snap\Core\Snap;
+use Snap\Services\Router;
+use Snap\Services\View;
 
 // We always want these partials, so put them here.
-Snap::view()->partial( 'header' );
-Snap::view()->partial( 'navigation' );
-
+View::partial( 'header' );
+View::partial( 'navigation' );
 
 // Post-templates are a little bit more tricky as the view name needs to be dynamic.
-Snap::route()->is_page_template()->view( get_page_template_slug() );
+Router::when( is_page_template() )->view( get_page_template_slug() );
 
-Snap::route()->is_404()->view( '404' );
+Router::when( is_404() )->view( '404' );
 
 // If you prefer, you can also dispatch a controller action.
-Snap::route()->dispatch( 'Example@index' );
+Router::dispatch( 'Example@index' );
 
-Snap::view()->partial( 'footer' );
+View::partial( 'footer' );
