@@ -31,19 +31,23 @@ if (process.env.NODE_ENV === 'installation') {
 	    }
 	});
 
-	mix.setPublicPath('./dist/')
+	mix
+		.setPublicPath('dist')
+    	.setResourceRoot('../')
 		.options({ processCssUrls: false })
 		.sass(src('sass/style.scss'), dist('css'))
 		.copyDirectory(src('images'), dist('images'))
-		.js(src('scripts/theme.js'), dist('scripts'));
+		.js(src('scripts/theme.js'), dist('scripts'))
+		.version();
 
 	if (mix.inProduction()) {
-		mix.options({ processCssUrls: false })
-			.version();
+		mix
+			.options({ processCssUrls: false });
 	} else {
-		mix.webpackConfig({
-	        devtool: 'source-map'
-	    }).sourceMaps();
+		mix
+			.webpackConfig({
+		        devtool: 'source-map'
+		    })
+		    .sourceMaps();
 	}
-	
 }
