@@ -14,6 +14,14 @@ use Symfony\Component\Console\Question\ChoiceQuestion;
 class Install extends Command
 {
     /**
+     * Remove the install file after running.
+     */
+    function __destruct()
+    {
+        unlink(__FILE__);
+    }
+    
+    /**
      * Setup the command signature and help text.
      */
     protected function configure()
@@ -150,6 +158,7 @@ class Install extends Command
 
 
 $application = new Application();
-$application->add(new Install());
-
+$command = new Install();
+$application->add($command);
+$application->setDefaultCommand($command->getName());
 $application->run();

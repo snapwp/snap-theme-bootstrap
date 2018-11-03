@@ -21,5 +21,10 @@
     "require-dev": {
         "snapwp/snap-debug": "^1.0.2",
         "symfony/process": "^4.1"
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "@php -r \"echo \"To finish installation, run the following command:\n\nphp install-snap\";\""
+        ]
     }
 }
