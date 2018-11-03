@@ -1,6 +1,5 @@
 <?php
 
-
 use Snap\Core\Snap;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
@@ -10,10 +9,7 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 
-
 @include_once __DIR__ . '/vendor/autoload.php';
-
-
 
 class Install extends Command
 {
@@ -60,6 +56,11 @@ class Install extends Command
         }
     }
 
+    /**
+     * Install the Blade package and publish.
+     *
+     * @param OutputInterface $output
+     */
     private function install_blade(OutputInterface $output)
     {
         $install = new Process('composer require snapwp/snap-blade');
@@ -73,12 +74,11 @@ class Install extends Command
 
             $output->writeln('<info>Downloaded successfully!</info>');
         } catch (ProcessFailedException $exception) {
-            $output->writeln("<error>Could not download:\n$exception->getMessage()</error>");
+            $output->writeln("<error>Could not download.</error>");
             exit;
         }
 
         $this->add_blade_to_config();
-
         $this->clear_templates();
 
         // Publish the snap package.
@@ -91,8 +91,7 @@ class Install extends Command
 
             $output->writeln('<info>Blade package successfully published.</info>');
         } catch (ProcessFailedException $exception) {
-            var_dump($exception);
-            $output->writeln("<error>Could not download:\n$exception->()</error>");
+            $output->writeln("<error>Could not publish the blade package.</error>");
             exit;
         }
 
