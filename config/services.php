@@ -8,7 +8,6 @@ return [
      */
 	'providers' => [
 		Snap\Debug\Debug_Service_Provider::class,
-		//Snap\Blade\Blade_Service_Provider::class,
 	],
 
 
