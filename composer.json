@@ -24,7 +24,7 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "@php -r \"echo \"To finish installation, run the following command:\n\nphp install-snap\";\""
+            "@php -r \"echo \"To finish installation, please run the following command:\n\nphp install-snap\";\""
         ]
     }
 }
