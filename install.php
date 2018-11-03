@@ -130,6 +130,11 @@ class Install extends Command
         }
     }
 
+    /**
+     * Add the provider to the services config.
+     *
+     * Crude but gets the job done.
+     */
     private function add_blade_to_config()
     {
         $config = file_get_contents(__DIR__ . '/config/services.php');
