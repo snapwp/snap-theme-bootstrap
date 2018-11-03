@@ -22,7 +22,7 @@ class Bootstrap extends Hookable
         'embed_oembed_html' => 'make_oembeds_responsive',
         'the_content' => [
             'inject_content_classes',
-            'add_bootrap_markup_to_images',
+            'add_bootstrap_markup_to_images',
         ],
         'img_caption_shortcode' => 'wrap_captions',
     ];
@@ -44,7 +44,7 @@ class Bootstrap extends Hookable
     /**
      * Add Bootstrap markup to snap_pagination default arguments
      *
-     * @see Snap\Modules\Pagination
+     * @see \Snap\Templating\Pagination
      *
      * @param  array $args The default arguments
      * @return array       The altered arguments
@@ -97,12 +97,12 @@ class Bootstrap extends Hookable
     }
 
     /**
-     * Wrap post content images in a figure, annd add bootstrap classes to them to sort out alignment issues.
+     * Wrap post content images in a figure, and add bootstrap classes to them to sort out alignment issues.
      *
      * @param  string $content The page content.
      * @return string
      */
-    public function add_bootrap_markup_to_images($content)
+    public function add_bootstrap_markup_to_images($content)
     {
         preg_match_all('#<img[^>]*class="[^"]*"[^>]*>#', $content, $matches);
 
@@ -111,18 +111,34 @@ class Bootstrap extends Hookable
                 $img_class = str_replace('class="', 'class="img-fluid ', $matches[0][$k]);
 
                 if (strpos($v, 'aligncenter') !== false) {
-                    $content = str_replace($matches[0][$k], '<figure class="figure text-center d-block">' . $img_class . '</figure>', $content);
+                    $content = str_replace(
+                        $matches[0][$k],
+                        '<figure class="figure text-center d-block">' . $img_class . '</figure>',
+                        $content
+                    );
                 } elseif (strpos($v, 'alignleft') !== false) {
-                    $content = str_replace($matches[0][$k], '<figure class="figure float-sm-none float-md-left text-center mr-md-3 d-block">' . $img_class . '</figure>', $content);
+                    $content = str_replace(
+                        $matches[0][$k],
+                        '<figure class="figure float-sm-none float-md-left text-center mr-md-3 d-block">' . $img_class . '</figure>',
+                        $content
+                    );
                 } elseif (strpos($v, 'alignright') !== false) {
-                    $content = str_replace($matches[0][$k], '<figure class="figure float-sm-none float-md-right text-center ml-md-3 d-block">' . $img_class . '</figure>', $content);
+                    $content = str_replace(
+                        $matches[0][$k],
+                        '<figure class="figure float-sm-none float-md-right text-center ml-md-3 d-block">' . $img_class . '</figure>',
+                        $content
+                    );
                 } elseif (strpos($v, 'alignnone') !== false) {
-                    $content = str_replace($matches[0][$k], '<figure class="figure text-center text-md-left d-block">' . $img_class . '</figure>', $content);
+                    $content = str_replace(
+                        $matches[0][$k],
+                        '<figure class="figure text-center text-md-left d-block">' . $img_class . '</figure>',
+                        $content
+                    );
                 }
             }
         }
 
-        // Wrapping things in figures can cause stray <p> tagsm, so we need to remove.
+        // Wrapping things in figures can cause stray <p> tags, so we need to remove.
         $content = str_replace([ '<p><figure', '</figure></p>' ], [ '<figure', '</figure>' ], $content);
 
         return $content;
@@ -141,19 +157,35 @@ class Bootstrap extends Hookable
         // Ensure all images are responsive and have the correct classes to be in a figure.
         $content = str_replace('class="', 'class="img-fluid figure-img ', $content);
 
+        $caption = $attr['caption'];
+
         switch ($attr['align']) {
             case 'alignleft':
-                return '<figure class="figure float-sm-none float-md-left text-center mr-md-3 d-block">' . $content . '<figcaption class="figure-caption text-center text-md-left">' . $attr['caption'] . '</figcaption></figure>';
+                return '<figure class="figure float-sm-none float-md-left text-center mr-md-3 d-block">'
+                    . $content
+                    . '<figcaption class="figure-caption text-center text-md-left">' . $caption . '</figcaption>'
+                    . '</figure>';
                 break;
             case 'alignright':
-                return '<figure class="figure float-sm-none float-md-right text-center ml-md-3 d-block">' . $content . '<figcaption class="figure-caption text-center text-md-right">' . $attr['caption'] . '</figcaption></figure>';
+                return '<figure class="figure float-sm-none float-md-right text-center ml-md-3 d-block">'
+                    . $content
+                    . '<figcaption class="figure-caption text-center text-md-right">' . $caption . '</figcaption>'
+                    . '</figure>';
                 break;
             case 'aligncenter':
-                return '<figure class="figure text-center d-block">' . $content . '<figcaption class="figure-caption">' . $attr['caption'] . '</figcaption></figure>';
+                return '<figure class="figure text-center d-block">'
+                    . $content
+                    . '<figcaption class="figure-caption">' . $caption . '</figcaption>'
+                    . '</figure>';
                 break;
             case 'alignnone':
-                return '<figure class="figure text-center text-md-left d-block">' . $content . '<figcaption class="figure-caption">' . $attr['caption'] . '</figcaption></figure>';
+                return '<figure class="figure text-center text-md-left d-block">'
+                    . $content
+                    . '<figcaption class="figure-caption">' . $caption . '</figcaption>'
+                    . '</figure>';
                 break;
         }
+
+        return $content;
     }
 }

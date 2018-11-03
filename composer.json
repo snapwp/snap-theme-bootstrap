@@ -16,14 +16,10 @@
     "require": {
         "php": ">=7.0",
         "composer/installers": "~1.0",
-        "snapwp/snap-core": "dev-master"
+        "snapwp/snap-core": ">=0.3",
+        "snapwp/snap-blade": "^1.0.1"
     },
     "require-dev": {
-        "snapwp/snap-debug": ">=1.0"
-    },
-    "scripts": {
-        "post-create-project-cmd": [
-            "php -r \"echo 'hey';\""
-        ]
+        "snapwp/snap-debug": "^1.0.2"
     }
 }
