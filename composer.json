@@ -16,7 +16,6 @@
     "require": {
         "php": ">=7.0",
         "composer/installers": "~1.0",
-        "snapwp/snap-blade": "^1.0.1"
         "snapwp/snap-core": ">=0.3"
     },
     "require-dev": {
