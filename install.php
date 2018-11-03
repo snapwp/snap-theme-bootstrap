@@ -77,10 +77,14 @@ class Install extends Command
             exit;
         }
 
+        $this->add_blade_to_config();
+
         $this->clear_templates();
 
         // Publish the snap package.
-        $publish = new Process('snap publish --package=\Snap\Blade\Blade_Service_Provider');
+        $publish = new Process(
+            sprintf('snap publish --package=\Snap\Blade\Blade_Service_Provider --root=%s', __DIR__)
+        );
 
         try {
             $publish->mustRun();
@@ -124,6 +128,19 @@ class Install extends Command
                 @unlink($file);
             }
         }
+    }
+
+    private function add_blade_to_config()
+    {
+        $config = file_get_contents(__DIR__ . '/config/services.php');
+
+        $providers = preg_replace(
+            '/(\'providers\'\s*\=>\s*\[)([^]]*)(\])/m',
+            "$1$2\tSnap\Blade\Blade_Service_provider::class,\n$3",
+            $config
+        );
+
+        file_put_contents(__DIR__ . '/config/services.php', $providers);
     }
 }
 
