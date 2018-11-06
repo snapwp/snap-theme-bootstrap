@@ -9,35 +9,28 @@ use Snap\Core\Application;
  *
  * This means registering scripts, sidebars and menus.
  */
-class Setup extends Application
+class Theme_Setup extends Application
 {
-    /**
-     * Actions to add on init.
-     *
-     * @since 1.0.0
-     * @var array
-     */
-    protected $actions = [
-        'widgets_init' => 'register_theme_widgets',
-        'wp_enqueue_scripts' => 'enqueue_theme_assets',
-    ];
-
     /**
      * Declare theme support.
      *
      * Keys are the feature to enable, and values are any additional arguments to pass to add_theme_support().
      *
-     * @since  1.0.0
      * @var array
      */
     protected $supports = [
-        'woocommerce'
-    ];    
+        'html5' => [
+            'comment-list',
+            'comment-form',
+            'search-form',
+            'gallery',
+            'caption'
+        ]
+    ];
 
     /**
      * Declare theme menus.
      *
-     * @since  1.0.0
      * @var array
      */
     protected $menus = [
@@ -46,8 +39,6 @@ class Setup extends Application
 
     /**
      * Enqueue the theme CSS files.
-     *
-     * @since 1.0.0
      */
     public function enqueue_theme_assets()
     {
@@ -57,8 +48,6 @@ class Setup extends Application
 
     /**
      * Register the theme's widgets.
-     *
-     * @since 1.0.0
      */
     public function register_theme_widgets()
     {
