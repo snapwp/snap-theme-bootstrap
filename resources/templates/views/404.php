@@ -1,3 +1,9 @@
+<?php
+// You don't always have to extend layouts...
+$this->partial('header');
+$this->partial('navigation');
+?>
+
 <div class="container">
 	<div class="row">
 		<main class="col-lg-8" role="main" itemscope itemprop="mainContentOfPage">
@@ -9,3 +15,5 @@
 		</aside>
 	</div>
 </div>
+
+<?php $this->partial('footer'); ?>
