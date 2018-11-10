@@ -16,7 +16,8 @@
     "require": {
         "php": ">=7.0",
         "composer/installers": "~1.0",
-        "snapwp/snap-core": ">=0.3"
+        "snapwp/snap-core": ">=0.3",
+        "snapwp/snap-blade": "^1.0"
     },
     "require-dev": {
         "snapwp/snap-debug": "^1.0.2",
@@ -24,7 +25,7 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "echo To finish installation, please run the following command: php install-snap"
+            "Snap\\Commands\\Install::install_theme"
         ]
     }
 }
