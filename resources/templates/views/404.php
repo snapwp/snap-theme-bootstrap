@@ -1,8 +1,4 @@
-<?php
-// You don't always have to extend layouts...
-$this->partial('header');
-$this->partial('navigation');
-?>
+<?php $this->extends('layout'); ?>
 
 <div class="container">
 	<div class="row">
@@ -15,5 +11,3 @@ $this->partial('navigation');
 		</aside>
 	</div>
 </div>
-
-<?php $this->partial('footer'); ?>

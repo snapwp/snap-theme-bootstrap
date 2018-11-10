@@ -7,9 +7,3 @@
         </div>
     </div>
 </footer>
-
-<?php if ($this->extends_layout() === false) : ?>
-    <?php wp_footer(); ?>
-    </body>
-    </html>
-<?php endif;

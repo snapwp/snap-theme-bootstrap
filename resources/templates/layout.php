@@ -12,15 +12,18 @@
     </head>
 
     <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?>>
+
         <?php
         // Include the navigation partial.
         $this->partial('navigation');
 
+        // Outputs the content of the current view template.
         $this->output_view();
 
         $this->partial('footer');
         ?>
 
         <?php wp_footer(); ?>
+
     </body>
 </html>
