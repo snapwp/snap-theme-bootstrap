@@ -85,7 +85,7 @@ return [
      *
      * @var string
      */
-    'insert_image_default_size' => 'post_featured_image',
+    'insert_image_default_size' => 'post_full_column',
 
 
     /**
