@@ -1,7 +1,7 @@
 {
     "name": "snapwp/snap-theme-bootstrap",
     "type": "wordpress-theme",
-    "license": "MIT",
+    "license": "GPL-3.0-or-later",
     "description": "WordPress Bootstrap 4 starter theme, utilising the Snap theme framework.",
     "homepage": "https://github.com/snapwp/snap-theme-bootstrap",
     "authors": [
