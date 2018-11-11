@@ -20,8 +20,7 @@
         "snapwp/snap-blade": "^1.0"
     },
     "require-dev": {
-        "snapwp/snap-debug": "^1.0.2",
-        "symfony/process": "^4.1"
+        "snapwp/snap-debug": "^1.0.2"
     },
     "scripts": {
         "post-create-project-cmd": [
