@@ -19,7 +19,7 @@ return [
      *
      * @var string|false
      */
-	'placeholder_dir' => 'dist/images/placeholders/',
+	'placeholder_dir' => 'public/images/placeholders/',
 
 
 	/**
@@ -61,7 +61,7 @@ return [
      */
     'image_sizes' => [
         // This is a full column width image for inserting into pages/posts.
-        'post_full_column' => [730, 99999, false, 'Full Width'],
+        'post_full_width' => [730, 99999, false, 'Full Width'],
     ],
 
     /**
