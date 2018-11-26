@@ -14,10 +14,10 @@ if (process.env.NODE_ENV === 'installation') {
 	 */
 	mix.copyDirectory('node_modules/bootstrap/scss', src('sass/sass/vendor/bootstrap'));
 	mix.copyDirectory('node_modules/bootstrap/js', src('scripts/vendor/bootstrap'));
-	mix.copy('node_modules/jquery/public/jquery.min.js', src('scripts/vendor/jquery/jquery.min.js'));
-	mix.copy('node_modules/jquery/public/jquery.slim.min.js', src('scripts/vendor/jquery/jquery.slim.min.js'));
-	mix.copy('node_modules/popper.js/public/popper.js', src('scripts/vendor/popper/popper.js'));
-	mix.copy('node_modules/popper.js/public/popper.min.js', src('scripts/vendor/popper/popper.min.js'));
+	mix.copy('node_modules/jquery/dist/jquery.min.js', src('scripts/vendor/jquery/jquery.min.js'));
+	mix.copy('node_modules/jquery/dist/jquery.slim.min.js', src('scripts/vendor/jquery/jquery.slim.min.js'));
+	mix.copy('node_modules/popper.js/dist/popper.js', src('scripts/vendor/popper/popper.js'));
+	mix.copy('node_modules/popper.js/dist/popper.min.js', src('scripts/vendor/popper/popper.min.js'));
 
 	if (! fs.existsSync(src('sass/_variables.scss'))) {
 		mix.copy('node_modules/bootstrap/scss/_variables.scss', src('sass/_variables.scss'));
