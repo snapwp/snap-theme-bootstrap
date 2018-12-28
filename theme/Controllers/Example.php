@@ -3,7 +3,7 @@
 namespace Theme\Controllers;
 
 use Snap\Core\Controller;
-use Snap\Core\Request;
+use Snap\Http\Request;
 
 class Example extends Controller
 {
