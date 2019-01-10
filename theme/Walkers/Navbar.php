@@ -65,9 +65,9 @@ class Navbar extends Walker_Nav_Menu
      *
      * @see Walker::start_lvl()
      *
-     * @param string   $output Passed by reference. Used to append additional content.
-     * @param int      $depth  Depth of menu item. Used for padding.
-     * @param stdClass $args   An object of wp_nav_menu() arguments.
+     * @param string          $output Passed by reference. Used to append additional content.
+     * @param int             $depth  Depth of menu item. Used for padding.
+     * @param \stdClass|array $args   An object of wp_nav_menu() arguments.
      */
     public function start_lvl(&$output, $depth = 0, $args = [])
     {
@@ -89,9 +89,9 @@ class Navbar extends Walker_Nav_Menu
      *
      * @see Walker::end_lvl()
      *
-     * @param string   $output Passed by reference. Used to append additional content.
-     * @param int      $depth  Depth of menu item. Used for padding.
-     * @param stdClass $args   An object of wp_nav_menu() arguments.
+     * @param string          $output Passed by reference. Used to append additional content.
+     * @param int             $depth  Depth of menu item. Used for padding.
+     * @param \stdClass|array $args   An object of wp_nav_menu() arguments.
      */
     public function end_lvl(&$output, $depth = 0, $args = [])
     {
@@ -243,6 +243,11 @@ class Navbar extends Walker_Nav_Menu
             $atts['data-toggle']   = 'dropdown';
             $atts['aria-haspopup'] = 'true';
             $atts['aria-expanded'] = 'false';
+            $atts['role'] = 'button';
+
+            if (isset($atts['target'])) {
+                unset($atts['target']);
+            }
         }
 
         if ($this->has_schema === true) {
