@@ -2,14 +2,14 @@
 
 namespace Theme;
 
-use Snap\Core\Application;
+use Snap\Hookables\Theme;
 
 /**
  * Setup theme.
  *
  * This means registering scripts, sidebars and menus.
  */
-class Theme_Setup extends Application
+class Theme_Setup extends Theme
 {
     /**
      * Declare theme support.
