@@ -1,4 +1,4 @@
-<?php $this->extends('layout'); ?>
+<?php $this->extends('layouts.main'); ?>
 
 <div class="container">
 	<div class="row">
