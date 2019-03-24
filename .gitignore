@@ -1,10 +1,2 @@
 node_modules/
 vendor/
-package-lock.json
-composer.lock
-resources/assets/src/sass/_variables.scss
-cache/templates/*.bladec
-public/css
-public/images
-public/scripts
-public/mix-manifest.json
