@@ -128,16 +128,16 @@
         },
         {
             "name": "eftec/bladeone",
-            "version": "3.21",
+            "version": "3.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EFTEC/BladeOne.git",
-                "reference": "684d4613ff7ff17eec02c7b3661b5f6489c16e65"
+                "reference": "57819ad686604d9c3718b71ef1ce0274d8cd9a6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EFTEC/BladeOne/zipball/684d4613ff7ff17eec02c7b3661b5f6489c16e65",
-                "reference": "684d4613ff7ff17eec02c7b3661b5f6489c16e65",
+                "url": "https://api.github.com/repos/EFTEC/BladeOne/zipball/57819ad686604d9c3718b71ef1ce0274d8cd9a6b",
+                "reference": "57819ad686604d9c3718b71ef1ce0274d8cd9a6b",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +150,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.21-dev"
+                    "dev-master": "3.22-dev"
                 }
             },
             "autoload": {
@@ -178,7 +178,7 @@
                 "templating",
                 "view"
             ],
-            "time": "2019-03-07T22:20:14+00:00"
+            "time": "2019-04-03T11:15:40+00:00"
         },
         {
             "name": "jakewhiteley/hodl",
@@ -364,16 +364,16 @@
         },
         {
             "name": "snapwp/snap-blade",
-            "version": "v1.0.12",
+            "version": "v1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/snapwp/snap-blade.git",
-                "reference": "5aa905c90048f3d8e38fe9f00e21cf74b5ab25d9"
+                "reference": "828155d1a7054dd95d4fa3ad5a0818c0725b524a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snapwp/snap-blade/zipball/5aa905c90048f3d8e38fe9f00e21cf74b5ab25d9",
-                "reference": "5aa905c90048f3d8e38fe9f00e21cf74b5ab25d9",
+                "url": "https://api.github.com/repos/snapwp/snap-blade/zipball/828155d1a7054dd95d4fa3ad5a0818c0725b524a",
+                "reference": "828155d1a7054dd95d4fa3ad5a0818c0725b524a",
                 "shasum": ""
             },
             "require": {
@@ -407,20 +407,20 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2019-03-10T22:21:55+00:00"
+            "time": "2019-03-29T19:18:28+00:00"
         },
         {
             "name": "snapwp/snap-core",
-            "version": "v0.6.7",
+            "version": "0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/snapwp/snap-core.git",
-                "reference": "2cb088e56f02f3aee59342b120e3f4c1f2b33576"
+                "reference": "a114c1669b9fd67f3cd89516455fb3edff0768c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snapwp/snap-core/zipball/2cb088e56f02f3aee59342b120e3f4c1f2b33576",
-                "reference": "2cb088e56f02f3aee59342b120e3f4c1f2b33576",
+                "url": "https://api.github.com/repos/snapwp/snap-core/zipball/a114c1669b9fd67f3cd89516455fb3edff0768c0",
+                "reference": "a114c1669b9fd67f3cd89516455fb3edff0768c0",
                 "shasum": ""
             },
             "require": {
@@ -463,7 +463,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2019-03-12T14:56:05+00:00"
+            "time": "2019-04-20T16:56:38+00:00"
         },
         {
             "name": "symfony/console",
@@ -594,16 +594,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.2.4",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "6c05edb11fbeff9e2b324b4270ecb17911a8b7ad"
+                "reference": "8cf39fb4ccff793340c258ee7760fd40bfe745fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/6c05edb11fbeff9e2b324b4270ecb17911a8b7ad",
-                "reference": "6c05edb11fbeff9e2b324b4270ecb17911a8b7ad",
+                "url": "https://api.github.com/repos/symfony/process/zipball/8cf39fb4ccff793340c258ee7760fd40bfe745fe",
+                "reference": "8cf39fb4ccff793340c258ee7760fd40bfe745fe",
                 "shasum": ""
             },
             "require": {
@@ -639,7 +639,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-24T22:05:03+00:00"
+            "time": "2019-04-10T16:20:36+00:00"
         }
     ],
     "packages-dev": [
@@ -856,16 +856,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.2.4",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "9f87189ac10b42edf7fb8edc846f1937c6d157cf"
+                "reference": "e760a38e12b15032325e64be63f7ffc1817af617"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/9f87189ac10b42edf7fb8edc846f1937c6d157cf",
-                "reference": "9f87189ac10b42edf7fb8edc846f1937c6d157cf",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/e760a38e12b15032325e64be63f7ffc1817af617",
+                "reference": "e760a38e12b15032325e64be63f7ffc1817af617",
                 "shasum": ""
             },
             "require": {
@@ -928,7 +928,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2019-02-23T15:17:42+00:00"
+            "time": "2019-04-17T14:57:01+00:00"
         }
     ],
     "aliases": [],
