@@ -23,12 +23,12 @@ class Bootstrap_Comments extends Hookable
     public function boot()
     {
         if (Config::get('theme.disable_comments') === false) {
-            $this->add_filter('comment_form_defaults', 'add_bootstrap_markup_to_comments_form');
-            $this->add_filter('wp_list_comments_args', 'wp_list_comments_args');
-            $this->add_filter('comment_text', 'comment_text', 99);
+            $this->addFilter('comment_form_defaults', 'add_bootstrap_markup_to_comments_form');
+            $this->addFilter('wp_list_comments_args', 'wp_list_comments_args');
+            $this->addFilter('comment_text', 'comment_text', 99);
 
-            $this->add_action('comment_form_before', 'comment_form_before');
-            $this->add_action('comment_form_after', 'comment_form_after');
+            $this->addAction('comment_form_before', 'comment_form_before');
+            $this->addAction('comment_form_after', 'comment_form_after');
         }
     }
 

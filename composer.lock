@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "00b6e9adc1bd9adc70bdf1b5ce3a7a2b",
+    "content-hash": "7cb3e0642a353152595ab708ee5d3f40",
     "packages": [
         {
             "name": "composer/installers",
@@ -128,16 +128,16 @@
         },
         {
             "name": "eftec/bladeone",
-            "version": "3.22",
+            "version": "3.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EFTEC/BladeOne.git",
-                "reference": "57819ad686604d9c3718b71ef1ce0274d8cd9a6b"
+                "reference": "82f61a126dfff675a0f3956cda7cf6083485c5ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EFTEC/BladeOne/zipball/57819ad686604d9c3718b71ef1ce0274d8cd9a6b",
-                "reference": "57819ad686604d9c3718b71ef1ce0274d8cd9a6b",
+                "url": "https://api.github.com/repos/EFTEC/BladeOne/zipball/82f61a126dfff675a0f3956cda7cf6083485c5ea",
+                "reference": "82f61a126dfff675a0f3956cda7cf6083485c5ea",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +150,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.22-dev"
+                    "dev-master": "3.23-dev"
                 }
             },
             "autoload": {
@@ -178,7 +178,7 @@
                 "templating",
                 "view"
             ],
-            "time": "2019-04-03T11:15:40+00:00"
+            "time": "2019-04-23T18:52:26+00:00"
         },
         {
             "name": "jakewhiteley/hodl",
@@ -364,16 +364,16 @@
         },
         {
             "name": "snapwp/snap-blade",
-            "version": "v1.0.13",
+            "version": "1.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/snapwp/snap-blade.git",
-                "reference": "828155d1a7054dd95d4fa3ad5a0818c0725b524a"
+                "reference": "41e004e93440f6b58638b64dc8d20cca4a0546fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snapwp/snap-blade/zipball/828155d1a7054dd95d4fa3ad5a0818c0725b524a",
-                "reference": "828155d1a7054dd95d4fa3ad5a0818c0725b524a",
+                "url": "https://api.github.com/repos/snapwp/snap-blade/zipball/41e004e93440f6b58638b64dc8d20cca4a0546fa",
+                "reference": "41e004e93440f6b58638b64dc8d20cca4a0546fa",
                 "shasum": ""
             },
             "require": {
@@ -407,20 +407,20 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2019-03-29T19:18:28+00:00"
+            "time": "2019-04-20T17:08:32+00:00"
         },
         {
             "name": "snapwp/snap-core",
-            "version": "0.7.0",
+            "version": "0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/snapwp/snap-core.git",
-                "reference": "a114c1669b9fd67f3cd89516455fb3edff0768c0"
+                "reference": "b00cfba1a1a8cdb0fdb481b3595e90015ec81bc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snapwp/snap-core/zipball/a114c1669b9fd67f3cd89516455fb3edff0768c0",
-                "reference": "a114c1669b9fd67f3cd89516455fb3edff0768c0",
+                "url": "https://api.github.com/repos/snapwp/snap-core/zipball/b00cfba1a1a8cdb0fdb481b3595e90015ec81bc4",
+                "reference": "b00cfba1a1a8cdb0fdb481b3595e90015ec81bc4",
                 "shasum": ""
             },
             "require": {
@@ -463,7 +463,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2019-04-20T16:56:38+00:00"
+            "time": "2019-04-20T17:07:13+00:00"
         },
         {
             "name": "symfony/console",
