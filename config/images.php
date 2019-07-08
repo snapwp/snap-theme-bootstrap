@@ -31,18 +31,6 @@ return [
 	 */
 	'supports_featured_images' => true,
 
-
-	/**
-	 * Set to true to remove all default image sizes apart from full size and thumbnail.
-	 *
-	 * We would recommend leaving this as true, and then defining your own image sizes below.
-	 * This way the uploads directory clutter is reduced and the site takes up less space.
-     *
-     * @var bool
-	 */
-    'reset_image_sizes' => true,
-
-
     /**
      * Defines all image sizes for the site.
      *
@@ -60,6 +48,10 @@ return [
      * }
      */
     'image_sizes' => [
+        // Unset these default sizes as they aren't really needed
+        'medium_large' => false,
+        'large' => false,
+
         // This is a full column width image for inserting into pages/posts.
         'post_full_width' => [730, 99999, false, 'Full Width'],
     ],
