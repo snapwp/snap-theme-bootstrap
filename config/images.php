@@ -56,6 +56,7 @@ return [
         'post_full_width' => [730, 99999, false, 'Full Width'],
     ],
 
+
     /**
      * These image sizes are NOT generated for all images upon upload.
      *
