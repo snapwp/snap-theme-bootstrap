@@ -86,11 +86,11 @@ class Bootstrap extends Hookable
     public function inject_content_classes($html)
     {
         if (strpos($html, '<blockquote') !== false) {
-            $html = preg_replace('/(<blockquote([^>]*))>/', "$1 class=\"blockquote\"", $html);
+            $html = preg_replace('/(<blockquote([^>]*))>/', "$1 class=\"blockquote\">", $html);
         }       
 
         if (strpos($html, '<table') !== false) {
-            $html = preg_replace('/(<table([^>]*))>/', "$1 class=\"table\"", $html);
+            $html = preg_replace('/(<table([^>]*))>/', "$1 class=\"table\">", $html);
         }
 
         return $html;
