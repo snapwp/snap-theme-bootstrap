@@ -52,7 +52,7 @@ class PostTag extends Taxonomy
    /**
     * Run after the taxonomy is registered.
     */
-   public function boot(): void
+   public function boot()
    {
        //$this->columns()->add('example_column', 'Example Column');
    }

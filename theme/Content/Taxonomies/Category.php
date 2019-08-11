@@ -21,9 +21,9 @@ class Category extends Taxonomy
     *
     * @var array
     */
-   protected $post_types = [
+    protected $post_types = [
        'post'
-   ];
+    ];
 
    /**
     * Override the post type default options.
@@ -38,7 +38,7 @@ class Category extends Taxonomy
    /**
     * Run after the taxonomy is registered.
     */
-   public function boot(): void
+   public function boot()
    {
        //$this->columns()->add('example_column', 'Example Column');
    }
