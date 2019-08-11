@@ -1,5 +1,9 @@
 <?php
 
+if (defined('SNAP_DOING_COMMAND') && SNAP_DOING_COMMAND) {
+    return;
+}
+
 include('vendor/autoload.php');
 
 /**
