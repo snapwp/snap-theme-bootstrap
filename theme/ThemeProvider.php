@@ -2,13 +2,12 @@
 
 namespace Theme;
 
-use Snap\Services\Container;
-use Snap\Services\Service_Provider;
+use Snap\Services\ServiceProvider;
 
 /**
  * Theme service provider.
  */
-class Theme_Provider extends Service_Provider
+class ThemeProvider extends ServiceProvider
 {
     /**
      * Register any services you theme uses into the service container.

@@ -7,7 +7,7 @@ namespace Theme;
  *
  * This means registering scripts, sidebars and menus.
  */
-class Theme_Setup extends \Snap\Hookables\Theme
+class ThemeSetup extends \Snap\Hookables\Theme
 {
     /**
      * Declare theme support.
@@ -23,7 +23,14 @@ class Theme_Setup extends \Snap\Hookables\Theme
             'search-form',
             'gallery',
             'caption'
-        ]
+        ],
+
+        // Remove annoying gutenberg features
+        'editor-color-palette',
+        'disable-custom-colors',
+        'editor-font-sizes',
+        'disable-custom-font-sizes',
+        'responsive-embeds',
     ];
 
     /**
