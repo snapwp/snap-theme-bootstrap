@@ -7,7 +7,7 @@ return [
      * @var array
      */
     'providers' => [
-        Snap\Debug\Debug_Service_Provider::class,
+        Snap\Debug\DebugServiceProvider::class,
     ],
 
     /**
