@@ -18,7 +18,7 @@
         $this->partial('navigation');
 
         // Outputs the content of the current view template.
-        $this->output_view();
+        $this->outputView();
 
         $this->partial('footer');
         ?>
