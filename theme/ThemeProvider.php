@@ -17,5 +17,15 @@ class ThemeProvider extends ServiceProvider
         // Container::add(Example::class, function() {
         //     return new Example();
         // });
+
+        // View::share('dog', 'bar');
+
+        // View::when('partials.post-type.post', function($view){
+        //     $view->addData('dick', 'weasel');
+        // });
+
+        // Snap\Services\Blade::if('black', function() {
+        //
+        // });
     }
 }

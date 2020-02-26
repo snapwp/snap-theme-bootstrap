@@ -31,6 +31,15 @@ return [
 	 */
 	'supports_featured_images' => true,
 
+
+    /**
+     * Removes any rewrite rules associated with attachments.
+     *
+     * You may need to save permalinks for this to take effect.
+     */
+    'disable_attachment_permalinks' => true,
+
+
     /**
      * Defines all image sizes for the site.
      *
@@ -49,11 +58,12 @@ return [
      */
     'image_sizes' => [
         // Unset these default sizes as they aren't really needed
+        'medium' => false,
         'medium_large' => false,
         'large' => false,
 
         // This is a full column width image for inserting into pages/posts.
-        'post_full_width' => [730, 99999, false, 'Full Width'],
+        //'post_full_width' => [730, 99999, false, 'Full Width Image'],
     ],
 
 
@@ -69,7 +79,10 @@ return [
      * @var array|bool
      */
     'dynamic_image_sizes' => [
-        'post_featured_image' => [730, 450, true],
+        'size_200' => [200, 200, true],
+        //'size_400' => [400, 400, true],
+        //'size_500' => [500, 500, true],
+        //'size_800' => [800, 800, true],
     ],
 
 
@@ -78,7 +91,7 @@ return [
      *
      * @var string
      */
-    'insert_image_default_size' => 'post_full_column',
+    'insert_image_default_size' => 'post_full_width',
 
 
     /**
