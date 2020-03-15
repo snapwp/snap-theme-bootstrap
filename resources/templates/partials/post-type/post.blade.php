@@ -1,4 +1,4 @@
-@if( is_single() )
+@if(is_single())
 
     <article itemscope itemtype="http://schema.org/Article">
         {!! get_the_post_thumbnail( $post, 'size_200', ['class' => 'mb-3 img-fluid'] ) !!}
@@ -8,6 +8,7 @@
         <div itemprop="articleBody">
             @thecontent
         </div>
+
     </article>
 
 @else
